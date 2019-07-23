@@ -1,1 +1,52 @@
-<p>customers works!</p>
+    <div class="row">
+      <div class="col">
+        <div>
+          <button class="btn btn-primary" (click)="addCustomer()">Create New</button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of customers$ | async">
+              <td><a (click)="editCustomer(c)">Edit</a></td>
+              <td>{{ c.firstName }}</td>
+              <td>{{ c.lastName }}</td>
+              <td>{{ c.email }}</td>
+              <td><a (click)="deleteCustomer(c)">Delete</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div *ngIf="showEditForm">
+          <h3>{{ title }}</h3>
+          <form [formGroup]="form">
+            <table>
+              <tr>
+                <td>First Name:</td>
+                <td><input type="text" formControlName="firstName" class="form-control" required></td>
+              </tr>
+              <tr>
+                <td>Last Name:</td>
+                <td><input type="text" formControlName="lastName" class="form-control" required></td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td><input type="text" formControlName="email" class="form-control"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button class="btn btn-primary" (click)="saveCustomer()" [disabled]="!form.valid">Save</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
