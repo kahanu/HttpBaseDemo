@@ -43,3 +43,31 @@ To view the HttpBase class and how it is used, look at the source in:
 ```javascript
 src/app/core/http-base.ts
 ```
+
+And see how it is implemented in the CustomerService in:
+
+```javascript 
+src/app/customers/customers.service.ts
+```
+
+```javascript
+export class Customer extends Entity {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CustomersService extends HttpBase<Customer> {
+  constructor(
+    protected http: HttpClient,
+    protected exceptionService: ExceptionService
+  ) {
+    super(http, exceptionService);
+  }
+
+  /** Add any custom service methods here. */
+}
+```
