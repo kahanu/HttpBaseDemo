@@ -1,27 +1,45 @@
-# HttpBaseDemo
+# HttpBase Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+[Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
-## Development server
+This project demonstrates how to integrate an HttpBase class into your Angular 8 project to encapsulate the CRUD operations for services.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Project Structure
+There are three (3) parts to this project:
 
-## Code scaffolding
+1)  Angular app - this is the basic Angular project that contains a Customer component that executes the basic CRUD operations against a MongoDB database.
+2)  NodeJS server - this RESTful WebApi server (written in Typescript) connects to MongoDB and contains the CRUD Http Verb operations, GET, POST, PUT, DELETE.
+3)  MongoDB database - this is a local database for development purposes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requirements to run this project
+To run this demo, you must have the following tools installed on your system:
 
-## Build
+1)  Angular CLI - version 8
+2)  NodeJS and npm - see Angular documentation for the recommended versions.
+3)  Typescript
+4)  MongoDB - install this locally to development
+5)  IDE of choice - [Visual Studio Code](https://code.visualstudio.com) (recommended) 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## How to Use
+To run this demo enter two commands in the folder path:
 
-## Running unit tests
+To start the NodeJs server, open another command-prompt or shell and enter:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```javascript
+npm run server
+```
 
-## Running end-to-end tests
+To start the Angular project, open a command-prompt or shell and enter:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```javascript
+npm start
+```
 
-## Further help
+Then open your browser to ```http://localhost:4200```.  The Customer link will contain the page with the CRUD operations.  Add a new customer to see how it works.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## HttpBase class
+To view the HttpBase class and how it is used, look at the source in:
+
+```javascript
+src/app/core/http-base.ts
+```
