@@ -53,13 +53,13 @@ export class Db {
       if (err) {
         self.exceptionService.handleError(res, err.message, errmsg);
       } else {
-        const repo = db.repo.find(wherePredicate);
+        const entities = db.repo.find(wherePredicate);
 
         if (sortQuery) {
-          repo.sort(sortQuery);
+          entities.sort(sortQuery);
         }
 
-        repo.toArray((error: any, docs: any) => {
+        entities.toArray((error: any, docs: any) => {
           if (error) {
             self.exceptionService.handleError(res, error.message, errmsg);
           } else {
