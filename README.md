@@ -23,13 +23,13 @@ To run this demo, you must have the following tools installed on your system:
 ## How to Use
 To run this demo enter two commands in the folder path:
 
-To start the NodeJs server, open another command-prompt or shell and enter:
+To start the NodeJs server, open a command-prompt or shell and enter:
 
 ```javascript
 npm run server
 ```
 
-To start the Angular project, open a command-prompt or shell and enter:
+To start the Angular project, open a second command-prompt or shell and enter:
 
 ```javascript
 npm start
