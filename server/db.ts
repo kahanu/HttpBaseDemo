@@ -42,8 +42,8 @@ export class Db {
    * Get all the objects for the requested route.
    * @param req The HTTP request.
    * @param res The HTTP response.
-   * @param wherePredicate The MongoDB where predicate. Ex: { tag: 'john' }
-   * @param sortQuery The MongoDB query to be used for sorting.
+   * @param wherePredicate The MongoDB where predicate. Ex: { tag: 'cameras' } // get all records where 'tag' == 'cameras'
+   * @param sortQuery The MongoDB query to be used for sorting. Ex: { lastName: 1 } // get last name in ascending order
    * @param errmsg The error message to be returned.
    * @param next The optional callback function.
    */

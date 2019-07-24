@@ -9,14 +9,14 @@ export class CustomerRoutes {
 
   init(app: Application, exp: any) {
     const db: Db = new Db();
-    const defaultSort: any = { sortOrder: 1 };
+    const defaultSort: any = { lastName: 1 };
     const wherePredicate: any = {};
     const ObjectID = MongoDb.ObjectID;
 
     this.apiRoutes = exp.Router();
     this.customerRoutes = exp.Router();
 
-    app.use(cors({ origin: 'http://localhost:4200'}));
+    app.use(cors());
 
     this.apiRoutes.use('/customers', this.customerRoutes);
 
@@ -24,13 +24,7 @@ export class CustomerRoutes {
      * Get all customers
      */
     this.customerRoutes.get('/', (req: Request, res: Response) => {
-      db.get(
-        req,
-        res,
-        wherePredicate,
-        defaultSort,
-        'Failed to get the customers.'
-      );
+      db.get(req, res, wherePredicate, defaultSort, 'Failed to get the customers.');
     });
 
     /**
@@ -45,7 +39,7 @@ export class CustomerRoutes {
     });
 
     /**
-     * Save a customer. (Used for both POST and PUT)
+     * Save a customer. (Used for both POST and PUT in this example)
      */
     this.customerRoutes.post('/', (req: Request, res: Response) => {
       if (!req.body) {
