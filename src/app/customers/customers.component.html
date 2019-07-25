@@ -3,6 +3,9 @@
         <div>
           <button class="btn btn-primary" (click)="addCustomer()">Create New</button>
         </div>
+      </div></div>
+      <div class="row">
+        <div class="col-md-8 col-sm">
         <table class="table">
           <thead>
             <tr>
@@ -24,6 +27,8 @@
           </tbody>
         </table>
 
+      </div>
+      <div class="col-md-4 col-sm">
         <div *ngIf="showEditForm">
           <h3>{{ title }}</h3>
           <form [formGroup]="form">
@@ -42,11 +47,13 @@
               </tr>
               <tr>
                 <td colspan="2">
-                  <button class="btn btn-primary" (click)="saveCustomer()" [disabled]="!form.valid">Save</button>
+                  <button class="btn btn-primary" (click)="saveCustomer()" [disabled]="!form.valid">Save</button>&nbsp;
+                  <button class="btn btn-outline-secondary" (click)="closeForm()">Close</button>
                 </td>
               </tr>
             </table>
           </form>
         </div>
+
       </div>
     </div>

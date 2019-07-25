@@ -40,6 +40,7 @@ export class CustomersComponent implements OnInit {
   }
 
   addCustomer() {
+    this.title = 'Add Customer';
     this.initForm(new Customer());
     this.showEditForm = true;
   }
@@ -75,5 +76,9 @@ export class CustomersComponent implements OnInit {
             this.toastr.success('Customer deleted successfully!', 'Delete Customer');
         }, error => this.toastr.error(error, 'Delete Customer Error'));
     }
+  }
+
+  closeForm() {
+    this.showEditForm = false;
   }
 }

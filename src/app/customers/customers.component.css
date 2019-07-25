@@ -9,3 +9,11 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+td > a {
+  color: blue;
+}
+
+td > a:hover {
+  text-decoration: underline;
+}
